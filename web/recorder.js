@@ -10,10 +10,10 @@ const debug = 'undefined' !== typeof window
   : process.env.DEBUG;
 
 // Send spans to Zipkin asynchronously over HTTP
-const zipkinBaseUrl = 'http://localhost:9411';
+const zipkinBaseUrl = 'http://localhost:54133';
 
 const httpLogger = new HttpLogger({
-  endpoint: `${zipkinBaseUrl}/api/v2/spans`,
+  endpoint: `${zipkinBaseUrl}/trace?source=zipkin&version=v2`,
   jsonEncoder: JSON_V2
 });
 
